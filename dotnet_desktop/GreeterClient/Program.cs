@@ -48,8 +48,8 @@ namespace GreeterClient
 
             // Create a request
             var request = new HelloRequest{
-                Name = "Mete - on C#",
-                Age = 34,
+                Name = "Sanath - on C#",
+                Age = 30,
                 Sentiment = Sentiment.Happy
             };
 
@@ -58,6 +58,13 @@ namespace GreeterClient
             var response = client.greeting(request);
 
             Console.WriteLine("GreeterClient received response: " + response.Greeting);
+
+
+            // Goodbye
+            Console.WriteLine("Goodbye");
+            response = client.goodbye(request);
+
+            Console.WriteLine("GreeterClient received response: "+ response.Greeting);
 
             // Shutdown
             channel.ShutdownAsync().Wait();
